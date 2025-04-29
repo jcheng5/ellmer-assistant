@@ -47,7 +47,7 @@ def app_ui(request):
             href="./",
             id="clear",
             class_="btn btn-sm btn-default float-right bg-light shadow",
-            style="position: fixed; top: 0.5rem; left: 50%; transform: translateX(-50%); --bs-btn-hover-color: unset;",
+            style="position: fixed; top: 0.5rem; left: 50%; transform: translateX(-50%); --bs-btn-hover-color: unset; z-index: 100;",
         ),
         ui.chat_ui(
             "chat",
