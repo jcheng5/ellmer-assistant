@@ -46,6 +46,8 @@ def app_ui(request):
             "📄 New Chat",
             href="./",
             id="clear",
+            # Necessary to work right on Shinyapps.io?
+            onclick="window.location.href = window.location.pathname; return false;",
             class_="btn btn-sm btn-default float-right bg-light shadow",
             style="position: fixed; top: 0.5rem; left: 50%; transform: translateX(-50%); --bs-btn-hover-color: unset; z-index: 100;",
         ),
