@@ -38,13 +38,16 @@ with open(Path(__file__).parent / "prompt.generated.md") as f:
 def app_ui(request):
     return ui.page_fluid(
         ui.tags.style("a:not(:hover) { text-decoration: none; }"),
-        ui.tags.style("#clear { display: none; }", id="hide_new_convo_css"),
+        ui.tags.style(
+            "#clear { display: none; }",
+            id="hide_new_convo_css",
+        ),
         ui.tags.a(
             "📄 New Chat",
             href="./",
             id="clear",
             class_="btn btn-sm btn-default float-right bg-light shadow",
-            style="position: fixed; top: 0.5rem; left: 50%; transform: translateX(-50%);",
+            style="position: fixed; top: 0.5rem; left: 50%; transform: translateX(-50%); --bs-btn-hover-color: unset;",
         ),
         ui.chat_ui(
             "chat",
@@ -65,7 +68,7 @@ def server(input, output, session):
     async def chat_on_user_submit(user_input):
         resp = await chat_client.stream_async(user_input)
         await chat.append_message_stream(resp)
-    
+
     @reactive.effect
     def bookmark_on_restore():
         if len(chat.messages()) > 1:
