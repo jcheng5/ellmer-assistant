@@ -1,0 +1,12 @@
+[project]
+name = "elmer-assistant"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "chatlas>=0.7.0",
+    "dotenv>=0.9.9",
+    "openai>=1.76.1",
+    "shiny>=1.4.0",
+]
